@@ -1,0 +1,12 @@
+
+BG2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG2
+  rotate: false
+  xy: 1, 1
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,152 @@
+
+UI.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Level-down
+  rotate: false
+  xy: 1, 898
+  size: 542, 81
+  orig: 542, 81
+  offset: 0, 0
+  index: -1
+Cont
+  rotate: false
+  xy: 1, 751
+  size: 476, 145
+  orig: 476, 145
+  offset: 0, 0
+  index: -1
+Exit
+  rotate: false
+  xy: 1, 604
+  size: 476, 145
+  orig: 476, 145
+  offset: 0, 0
+  index: -1
+_0001_F1
+  rotate: false
+  xy: 1, 457
+  size: 476, 145
+  orig: 476, 145
+  offset: 0, 0
+  index: -1
+Level-up
+  rotate: false
+  xy: 545, 899
+  size: 406, 80
+  orig: 406, 80
+  offset: 0, 0
+  index: -1
+_0000_Music-off
+  rotate: false
+  xy: 1, 305
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0001_Sound-off
+  rotate: false
+  xy: 1, 153
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0002_More
+  rotate: false
+  xy: 153, 305
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0003_Pause
+  rotate: false
+  xy: 1, 1
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0003_Rating
+  rotate: false
+  xy: 153, 153
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0004_Music
+  rotate: false
+  xy: 305, 305
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0005_Sound
+  rotate: false
+  xy: 153, 1
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+_0008_VIII
+  rotate: false
+  xy: 305, 186
+  size: 121, 117
+  orig: 121, 117
+  offset: 0, 0
+  index: -1
+_0000_VI
+  rotate: false
+  xy: 305, 67
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0001_VII
+  rotate: false
+  xy: 479, 779
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0007_IX
+  rotate: false
+  xy: 479, 660
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0009_V
+  rotate: false
+  xy: 479, 541
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0010_IV
+  rotate: false
+  xy: 598, 780
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0011_III
+  rotate: false
+  xy: 598, 661
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0012_II
+  rotate: false
+  xy: 717, 780
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+_0013_I
+  rotate: false
+  xy: 598, 542
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1

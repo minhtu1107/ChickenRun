@@ -1,0 +1,264 @@
+
+skeleton.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bia-mo
+  rotate: false
+  xy: 557, 577
+  size: 381, 445
+  orig: 381, 445
+  offset: 0, 0
+  index: -1
+_0000_Love
+  rotate: false
+  xy: 302, 159
+  size: 371, 74
+  orig: 371, 74
+  offset: 0, 0
+  index: -1
+_0001_Mat-to
+  rotate: false
+  xy: 468, 44
+  size: 170, 51
+  orig: 170, 51
+  offset: 0, 0
+  index: -1
+_0001_Nuoc-vai
+  rotate: false
+  xy: 640, 17
+  size: 29, 78
+  orig: 29, 78
+  offset: 0, 0
+  index: -1
+_0001_Shit
+  rotate: true
+  xy: 940, 713
+  size: 309, 73
+  orig: 309, 73
+  offset: 0, 0
+  index: -1
+_0002_Oh
+  rotate: true
+  xy: 936, 74
+  size: 221, 73
+  orig: 221, 73
+  offset: 0, 0
+  index: -1
+_0003_Help
+  rotate: true
+  xy: 950, 342
+  size: 255, 72
+  orig: 255, 72
+  offset: 0, 0
+  index: -1
+_0004_o
+  rotate: false
+  xy: 936, 8
+  size: 83, 64
+  orig: 83, 64
+  offset: 0, 0
+  index: -1
+_0006_Cai-mat-8
+  rotate: true
+  xy: 675, 38
+  size: 257, 259
+  orig: 257, 259
+  offset: 0, 0
+  index: -1
+_0007_8-copy
+  rotate: false
+  xy: 2, 631
+  size: 553, 391
+  orig: 553, 391
+  offset: 0, 0
+  index: -1
+_0010_7-copy
+  rotate: true
+  xy: 2, 225
+  size: 404, 298
+  orig: 404, 298
+  offset: 0, 0
+  index: -1
+_0011_6-copy
+  rotate: false
+  xy: 547, 297
+  size: 401, 278
+  orig: 401, 278
+  offset: 0, 0
+  index: -1
+_0014_5-copy
+  rotate: true
+  xy: 302, 235
+  size: 394, 243
+  orig: 394, 243
+  offset: 0, 0
+  index: -1
+_0017_Mieng-ha-to
+  rotate: false
+  xy: 294, 39
+  size: 172, 118
+  orig: 172, 118
+  offset: 0, 0
+  index: -1
+_0018_Mieng-ha
+  rotate: true
+  xy: 940, 599
+  size: 112, 71
+  orig: 112, 71
+  offset: 0, 0
+  index: -1
+_0027_Mieng-buon
+  rotate: false
+  xy: 468, 7
+  size: 100, 35
+  orig: 100, 35
+  offset: 0, 0
+  index: -1
+_0028_Mat-hi
+  rotate: false
+  xy: 468, 97
+  size: 177, 60
+  orig: 177, 60
+  offset: 0, 0
+  index: -1
+_0031_Long-may-trai
+  rotate: false
+  xy: 950, 319
+  size: 41, 21
+  orig: 41, 21
+  offset: 0, 0
+  index: -1
+_0032_Long-may-phai
+  rotate: true
+  xy: 547, 246
+  size: 49, 52
+  orig: 49, 52
+  offset: 0, 0
+  index: -1
+_0033_Mieng-nhai-1
+  rotate: false
+  xy: 294, 3
+  size: 88, 34
+  orig: 88, 34
+  offset: 0, 0
+  index: -1
+_0034_Toc
+  rotate: false
+  xy: 2, 4
+  size: 290, 219
+  orig: 290, 219
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+_0000_Cai-mat-2
+  rotate: true
+  xy: 273, 523
+  size: 269, 201
+  orig: 269, 201
+  offset: 0, 0
+  index: -1
+_0003_Cai-mat-5
+  rotate: false
+  xy: 388, 804
+  size: 287, 206
+  orig: 287, 206
+  offset: 0, 0
+  index: -1
+_0009_Cai-mat-7
+  rotate: true
+  xy: 2, 270
+  size: 278, 223
+  orig: 278, 223
+  offset: 0, 0
+  index: -1
+_0012_Cai-mat-4
+  rotate: false
+  xy: 677, 811
+  size: 289, 199
+  orig: 289, 199
+  offset: 0, 0
+  index: -1
+_0019_Nhanh-rang
+  rotate: false
+  xy: 674, 309
+  size: 112, 48
+  orig: 112, 48
+  offset: 0, 0
+  index: -1
+_0035_Cai-mat-1
+  rotate: true
+  xy: 241, 24
+  size: 268, 200
+  orig: 268, 200
+  offset: 0, 0
+  index: -1
+_0037_Mat-nho
+  rotate: true
+  xy: 968, 842
+  size: 168, 42
+  orig: 168, 42
+  offset: 0, 0
+  index: -1
+_0041_Cai-mat-3
+  rotate: true
+  xy: 476, 518
+  size: 284, 199
+  orig: 284, 199
+  offset: 0, 0
+  index: -1
+_0042_4-copy
+  rotate: false
+  xy: 2, 794
+  size: 384, 216
+  orig: 384, 216
+  offset: 0, 0
+  index: -1
+_0043_3-copy
+  rotate: false
+  xy: 227, 294
+  size: 217, 227
+  orig: 217, 227
+  offset: 0, 0
+  index: -1
+_0044_2-copy
+  rotate: true
+  xy: 446, 299
+  size: 217, 226
+  orig: 217, 226
+  offset: 0, 0
+  index: -1
+_0045_-2
+  rotate: true
+  xy: 2, 4
+  size: 264, 237
+  orig: 264, 237
+  offset: 0, 0
+  index: -1
+_0046_-1-copy
+  rotate: false
+  xy: 677, 570
+  size: 259, 239
+  orig: 259, 239
+  offset: 0, 0
+  index: -1
+_0047_0-copy
+  rotate: false
+  xy: 2, 550
+  size: 269, 242
+  orig: 269, 242
+  offset: 0, 0
+  index: -1
+_0048_1-copy
+  rotate: true
+  xy: 677, 359
+  size: 209, 229
+  orig: 209, 229
+  offset: 0, 0
+  index: -1

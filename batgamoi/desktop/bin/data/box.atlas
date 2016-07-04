@@ -1,0 +1,33 @@
+
+box.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Duiga
+  rotate: false
+  xy: 1, 1
+  size: 133, 86
+  orig: 133, 86
+  offset: 0, 0
+  index: -1
+box
+  rotate: false
+  xy: 136, 11
+  size: 110, 76
+  orig: 110, 76
+  offset: 0, 0
+  index: -1
+Cay
+  rotate: false
+  xy: 248, 11
+  size: 110, 76
+  orig: 110, 76
+  offset: 0, 0
+  index: -1
+Da
+  rotate: false
+  xy: 360, 11
+  size: 110, 76
+  orig: 110, 76
+  offset: 0, 0
+  index: -1
