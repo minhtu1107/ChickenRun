@@ -407,10 +407,10 @@ public class BoardScreen extends InputAdapter
 
 		final float btnW = buttonSkin.getRegion("Exit").getRegionWidth()*scale_ratio;
 		final float btnH = buttonSkin.getRegion("Exit").getRegionHeight()*scale_ratio;
-		float start = scr_w - btnW*3 - 2*20*scale_ratio;
+		float start = scr_w - btnW*2 - 2*20*scale_ratio;
 		start = start/2;
 
-		TextButtonStyle shareSty = new TextButtonStyle();
+		/*TextButtonStyle shareSty = new TextButtonStyle();
 		shareSty.up = buttonSkin.getDrawable("_0001_F1");;	//buttonSkin.getDrawable("box");
 		shareSty.down = null;	//buttonSkin.getDrawable("Da");
 		shareSty.font = new BitmapFont();
@@ -435,7 +435,7 @@ public class BoardScreen extends InputAdapter
 			}
 		});
 
-		start += btnW + 20*scale_ratio;
+		start += btnW + 20*scale_ratio;*/
 		TextButtonStyle ContSty = new TextButtonStyle();
 		ContSty.up = buttonSkin.getDrawable("Cont");;	//buttonSkin.getDrawable("box");
 		ContSty.down = null;	//buttonSkin.getDrawable("Da");
@@ -569,7 +569,7 @@ public class BoardScreen extends InputAdapter
 		table.removeActor(EndScreen);
 		EndScreen.setVisible(false);
 		EndScreen.SetLvup(false, null, "");
-		table.removeActor(BtnShare);
+//		table.removeActor(BtnShare);
 		table.removeActor(BtnCont);
 		table.removeActor(BtnExit);
 		for(int i = 0; i< MaxBoardIdx; i++)
@@ -862,7 +862,7 @@ public class BoardScreen extends InputAdapter
 				{
 					EndScreen.setVisible(true);
 					table.addActor(EndScreen);
-					table.addActor(BtnShare);
+//					table.addActor(BtnShare);
 					table.addActor(BtnCont);
 					table.addActor(BtnExit);
 					actionResolver.showAds(true);
