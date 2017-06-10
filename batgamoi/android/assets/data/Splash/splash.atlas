@@ -1,0 +1,19 @@
+
+splash.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+splash
+  rotate: false
+  xy: 1, 290
+  size: 960, 540
+  orig: 960, 540
+  offset: 0, 0
+  index: -1
+_0006_Play
+  rotate: false
+  xy: 1, 1
+  size: 533, 287
+  orig: 533, 287
+  offset: 0, 0
+  index: -1

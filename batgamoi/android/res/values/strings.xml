@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CatchChickenGame</string>
+    <string name="app_name">Chicken Run 2</string>
     <string name="app_id">15256634020</string>
   	<string name="leaderboard_max_speed">CggIpIX36jgQAhAA</string>
   	<string name="STR_EXIT">Do you want to exit?</string>
@@ -9,6 +9,5 @@
   	<string name="STR_NO">NO</string>
     <string name="admob_id2">ca-app-pub-8170034479872470/5348734348</string>
     <string name="admob_id3">ca-app-pub-8170034479872470/6825467540</string>
-	<string name="link_wap_mxuka">http://m.xuka.vn/</string>
 	<string name="facebook_app_id">134507623619953</string>	
 </resources>

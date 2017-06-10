@@ -1,4 +1,12 @@
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Chickenrun2A'
+            keyPassword 'chickenrun2psw'
+            storeFile file('C:/Users/tu.tranhienminh/.android/keystore/chicken2.jks')
+            storePassword 'paladinn'
+        }
+    }
     buildToolsVersion "23.0.3"
     compileSdkVersion 23
     sourceSets {
@@ -20,15 +28,12 @@ android {
         targetSdkVersion 23
         multiDexEnabled true
     }
-
     buildTypes {
-
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-
+            signingConfig signingConfigs.config
         }
-
     }
 }
 // called every time gradle gets executed, takes the native dependencies of

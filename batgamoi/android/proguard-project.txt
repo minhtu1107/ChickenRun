@@ -27,12 +27,17 @@
 -dontwarn com.badlogic.gdx.physics.box2d.utils.Box2DBuild
 -dontwarn com.badlogic.gdx.jnigen.BuildTarget*
 -dontwarn com.badlogic.gdx.graphics.g2d.freetype.FreetypeBuild
+-dontwarn com.facebook.**
 
--keep class com.badlogic.gdx.controllers.android.AndroidControllers
-
--keepclassmembers class com.badlogic.gdx.backends.android.AndroidInput* {
-   <init>(com.badlogic.gdx.Application, android.content.Context, java.lang.Object, com.badlogic.gdx.backends.android.AndroidApplicationConfiguration);
-}
+-keep class com.badlogic.**
+-keep class com.badlogic.backends.**
+-keep class * implements com.badlogic.gdx.utils.Json*
+-keep class * extends com.badlogic.gdx.ApplicationAdapter
+-keepnames class com.badlogic.gdx.backends.android.AndroidInput*
+-keepclassmembers class com.badlogic.gdx.backends.android.AndroidInput* {<init>(...);}
+#-keepclassmembers class com.badlogic.gdx.backends.android.AndroidInput* {
+#   <init>(com.badlogic.gdx.Application, android.content.Context, java.lang.Object, com.badlogic.gdx.backends.android.AndroidApplicationConfiguration);
+#}
 
 #-keepclassmembers class com.badlogic.gdx.physics.box2d.World {
 #   boolean contactFilter(long, long);
@@ -43,3 +48,10 @@
 #   boolean reportFixture(long);
 #   float   reportRayFixture(long, float, float, float, float, float);
 #}
+-keep public class de.tomgrill.gdxfacebook.** {
+  *;
+}
+-keep class com.facebook.** {
+   *;
+}
+-keepattributes Signature
