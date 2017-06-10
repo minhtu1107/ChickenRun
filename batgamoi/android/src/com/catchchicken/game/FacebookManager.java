@@ -1,4 +1,4 @@
-package com.catchchicken.game;
+/*package com.catchchicken.game;
 
 import com.badlogic.gdx.Net;
 import com.badlogic.gdx.utils.Array;
@@ -120,3 +120,4 @@ public class FacebookManager {
 		});
 	}
 }
+*/

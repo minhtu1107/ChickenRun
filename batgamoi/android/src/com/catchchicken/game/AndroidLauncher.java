@@ -10,7 +10,7 @@ import com.catchchicken.game.CatchChickenGame;
 
 public class AndroidLauncher extends AndroidApplication implements ActionResolver {
 	
-	private FacebookManager fbManager;
+//	private FacebookManager fbManager;
 	private AdsManager adsManager;
 	RelativeLayout layout;
 	CatchChickenGame mygame;
@@ -39,7 +39,7 @@ public class AndroidLauncher extends AndroidApplication implements ActionResolve
         adsManager.addInterstitialAdView(this, layout, adParams);
         setContentView(layout);
 		showAds(false);
-		fbManager = new FacebookManager(mygame);
+//		fbManager = new FacebookManager(mygame);
 	}
 
 	public int counter = 0;
@@ -83,7 +83,7 @@ public class AndroidLauncher extends AndroidApplication implements ActionResolve
 	@Override
 	public void LoginFB(String shareMessage) {
 		// TODO Auto-generated method stub
-		fbManager.SignIn(shareMessage);
+//		fbManager.SignIn(shareMessage);
 	}
 
 }

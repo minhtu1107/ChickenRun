@@ -37,8 +37,8 @@ project(":desktop") {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-        compile "de.tomgrill.gdxfacebook:gdx-facebook-desktop:1.1.1"
+//        compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+//        compile "de.tomgrill.gdxfacebook:gdx-facebook-desktop:1.1.1"
     }
 }
 
@@ -53,11 +53,11 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
-        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
-        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
-        compile "de.tomgrill.gdxfacebook:gdx-facebook-android:1.1.1"
+//        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+//        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
+//        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
+//        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
+//        compile "de.tomgrill.gdxfacebook:gdx-facebook-android:1.1.1"
         compile "com.google.android.gms:play-services:9.0.2"
     }
 }
@@ -68,8 +68,8 @@ project(":core") {
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.1.1"
+//        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+//        compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.1.1"
     }
 }
 
