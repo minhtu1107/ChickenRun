@@ -16,7 +16,7 @@ class SaveData
 public class SaveManager {
 
     static SaveManager instance;
-    SaveData data;
+    public SaveData data;
     SaveManager()
     {
         data = new SaveData();

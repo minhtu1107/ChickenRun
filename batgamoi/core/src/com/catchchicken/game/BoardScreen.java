@@ -49,6 +49,7 @@ public class BoardScreen extends InputAdapter
 	private Skin buttonSkin;
 //	private TextButton button;
 	private TextButton[] g_Button;
+	private TextButton BtnPlay;
 	private TextButton BtnTutor;
 	private TextButton BtnMusic;
 	private TextButtonStyle Musicstyle = new TextButtonStyle();
@@ -225,21 +226,24 @@ public class BoardScreen extends InputAdapter
 		
 		//Button
 		BtnTutor = new TextButton("", style);
-		BtnTutor.setPosition(scr_w/2, scr_h/2);
-		BtnTutor.setHeight(scr_w);
-		BtnTutor.setWidth(scr_h);
+		BtnTutor.setPosition(0, 0);
+		BtnTutor.setHeight(scr_h);
+		BtnTutor.setWidth(scr_w);
 		BtnTutor.addListener(new InputListener() 
 		{
           public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) 
           {
 //        	  Gdx.app.log("my app", "Pressed"); //** Usually used to start Game, etc. **//
+
         	  return true;
           }
  
           public void touchUp (InputEvent event, float x, float y, int pointer, int button) 
           {
-			  table.removeActor(BtnTutor);
 			  game_state = Gamedef.STATE_GAMEPLAY;
+			  table.removeActor(BtnTutor);
+			  table.addActor(BtnMusic);
+			  table.addActor(BtnSound);
           }
 		});
 
@@ -305,6 +309,11 @@ public class BoardScreen extends InputAdapter
 		Bmfont = new BitmapFont(Gdx.files.internal("data/font1.fnt"), Gdx.files.internal("data/font1.png"), false);
 		Bmfont.getData().setScale(scale_ratio);
 		layout = new GlyphLayout();
+
+		Assets.GaS_skeleton.updateWorldTransform();
+		Assets.GaS_skeleton.getBounds(offset, size);
+		Assets.GaS_skeleton.setPosition(scr_w/2 + size.x/3, 3*scr_h/8);
+		Assets.BoyS_skeleton.setPosition(scr_w/2 + size.x/3, 3*scr_h/8);
 	}
 	
 	public float GetDeltaX(int idx)
@@ -361,7 +370,6 @@ public class BoardScreen extends InputAdapter
 			  SaveManager.getInstance().SaveGame();
           }
 		});
-		table.addActor(BtnMusic);
 
 		Soundstyle.up = null;	//buttonSkin.getDrawable("box");
         Soundstyle.down = null;	//buttonSkin.getDrawable("Da");
@@ -396,7 +404,6 @@ public class BoardScreen extends InputAdapter
 //			  actionResolver.LoginFB();
           }
 		});
-		table.addActor(BtnSound);
 
 		final float btnW = buttonSkin.getRegion("Exit").getRegionWidth()*scale_ratio;
 		final float btnH = buttonSkin.getRegion("Exit").getRegionHeight()*scale_ratio;
@@ -424,7 +431,7 @@ public class BoardScreen extends InputAdapter
 				BtnShare.setHeight(btnH);
 				BtnShare.setWidth(btnW);
 				actionResolver.showAds(false);
-				actionResolver.LoginFB(ShareString);
+//				actionResolver.LoginFB(SaveManager.getInstance().data.m_level, numMoves);
 			}
 		});
 
@@ -481,6 +488,32 @@ public class BoardScreen extends InputAdapter
 			}
 		});
 
+		buttonSkin.addRegions(Assets.Splash_atlas);
+		TextButtonStyle style = new TextButtonStyle(); //** Button properties **//
+		style.up = buttonSkin.getDrawable("_0006_Play");
+		style.down = null;	//buttonSkin.getDrawable("Da");
+		style.font = new BitmapFont();
+		BtnPlay = new TextButton("", style);
+		float playW = buttonSkin.getRegion("_0006_Play").getRegionWidth()*scale_ratio;
+		float playH = buttonSkin.getRegion("_0006_Play").getRegionHeight()*scale_ratio;
+		BtnPlay.setPosition(scr_w/2 - playW/2, playH/4);
+		BtnPlay.setHeight(playH);
+		BtnPlay.setWidth(playW);
+		BtnPlay.addListener(new InputListener()
+		{
+			public boolean touchDown (InputEvent event, float x, float y, int pointer, int button)
+			{
+				return true;
+			}
+
+			public void touchUp (InputEvent event, float x, float y, int pointer, int button)
+			{
+				game_state = Gamedef.STATE_TUTORIAL;
+				table.removeActor(BtnPlay);
+				table.addActor(BtnTutor);
+			}
+		});
+		table.addActor(BtnPlay);
 //		BtnShare.setVisible(false);
 //		BtnCont.setVisible(false);
 //		BtnExit.setVisible(false);
@@ -535,7 +568,7 @@ public class BoardScreen extends InputAdapter
 	{
 		table.removeActor(EndScreen);
 		EndScreen.setVisible(false);
-		EndScreen.SetLvup(false, null);
+		EndScreen.SetLvup(false, null, "");
 		table.removeActor(BtnShare);
 		table.removeActor(BtnCont);
 		table.removeActor(BtnExit);
@@ -666,13 +699,17 @@ public class BoardScreen extends InputAdapter
 		{
 			if(game_state == Gamedef.STATE_WIN && m_current_boy_anim != -1)
 			{
+				int level = SaveManager.getInstance().data.m_level;
 				Assets.Boy_skeleton.setSlotsToSetupPose();
 				Assets.Boy_state.setAnimation(0, "An", true);
 				m_current_boy_anim = -1;
-				EndScreen.SetLvup(true, "An");
+				if(level<m_SkinName.length-1)
+					level += 1;
+				EndScreen.SetLvup(true, "An", m_SkinName[level]);
 			}
 			else if(game_state == Gamedef.STATE_LOSE && m_current_boy_anim != -1)
 			{
+				int level = SaveManager.getInstance().data.m_level;
 				Assets.Boy_skeleton.setSlotsToSetupPose();
 //				float duration = Assets.Boy_skeleton.getData().findAnimation("Like shit").getDuration();
 //				Assets.Boy_state.setAnimation(0, "Like shit", false);
@@ -684,7 +721,9 @@ public class BoardScreen extends InputAdapter
 				Assets.Boy_state.setAnimation(0, anim, true);
 				m_current_boy_anim = -1;
 //				System.out.println("yyyyyyyyy " + Assets.Boy_skeleton.getX());
-				EndScreen.SetLvup(false, anim);
+				if(level>0)
+					level -= 1;
+				EndScreen.SetLvup(false, anim, m_SkinName[level]);
 			}
 			else if(game_state != Gamedef.STATE_LOSE && game_state != Gamedef.STATE_LOSE)
 			{
@@ -775,16 +814,23 @@ public class BoardScreen extends InputAdapter
 		{
 			case Gamedef.STATE_SPLASH:
 			{
-				if(m_current == 0)
-				{
-					m_current = TimeUtils.millis();
-				}
-				if(TimeUtils.millis() - m_current > 2000)
-				{
-					m_current = 0;
-					game_state = Gamedef.STATE_TUTORIAL;
-					table.addActor(BtnTutor);
-				}
+//				if(m_current == 0)
+//				{
+//					m_current = TimeUtils.millis();
+//				}
+//				if(TimeUtils.millis() - m_current > 2000)
+//				{
+//					m_current = 0;
+//					game_state = Gamedef.STATE_TUTORIAL;
+//					table.addActor(BtnTutor);
+//				}
+				Assets.GaS_state.update(Gdx.graphics.getDeltaTime());
+				Assets.GaS_state.apply(Assets.GaS_skeleton);
+				Assets.GaS_skeleton.updateWorldTransform();
+
+				Assets.BoyS_state.update(Gdx.graphics.getDeltaTime());
+				Assets.BoyS_state.apply(Assets.BoyS_skeleton);
+				Assets.BoyS_skeleton.updateWorldTransform();
 				break;
 			}
 			case Gamedef.STATE_TUTORIAL:
@@ -1113,24 +1159,17 @@ public class BoardScreen extends InputAdapter
 				batch.begin();
 				
 				//Draw BG
-//				batch.draw(Assets.SplashBGTexture, 
-//							0,
-//							0,
-//							scr_w,
-//							scr_h);
-				
-//				batch.draw(Assets.SplashTexture, 
-//						(scr_w - Assets.SplashTexture.getRegionWidth()*scale_ratio)/2,
-//						0,
-//						Assets.SplashTexture.getRegionWidth()*scale_ratio,
-//						Assets.SplashTexture.getRegionHeight()*scale_ratio);
-				batch.draw(Assets.SplashTexture, 
-						0,
-						0,
-						scr_w,
-						scr_h);
-//				renderer.draw(batch, Assets.Boy_skeleton);
+				batch.draw(Assets.SplashBGTexture,
+							0,
+							0,
+							scr_w,
+							scr_h);
+
+				renderer.draw(batch, Assets.GaS_skeleton);
+				renderer.draw(batch, Assets.BoyS_skeleton);
+
 				batch.end();
+				stage.draw();
 				break;
 			}
 			case Gamedef.STATE_TUTORIAL:

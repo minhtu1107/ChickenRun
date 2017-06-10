@@ -8,10 +8,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class CatchChickenGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	BoardScreen bScreen;
+	BoardScreen bScreen=null;
 	private ActionResolver actionResolver;
 	
-	public CatchChickenGame(ActionResolver act)
+	public void setActionResolver(ActionResolver act)
 	{
 		this.actionResolver = act;
 	}
@@ -57,5 +57,11 @@ public class CatchChickenGame extends ApplicationAdapter {
 			bScreen.GameShareFBReset();
 		else
 			bScreen.GameReset();
+	}
+
+	public void SaveGame()
+	{
+		if(bScreen!=null)
+			SaveManager.getInstance().SaveGame();
 	}
 }

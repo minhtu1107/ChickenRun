@@ -45,17 +45,22 @@ public class BoxActor {
 		if(m_effect)
 		{
 			m_current = TimeUtils.millis();
-			m_timer = Assets.FadeIn_skeleton.getData().findAnimation("animation").getDuration();	
-//			System.out.println("time ---- " + (TimeUtils.millis() - m_current));
+			m_timer = Assets.FadeIn_skeleton.getData().findAnimation("animation").getDuration();
+			m_timer = m_timer/Assets.FadeIn_state.getTimeScale();
+//			System.out.println("time ---- " + m_timer);
 			m_effect = false;
 		}
-		if(m_timer == 0 || TimeUtils.millis() - m_current > m_timer*1000)
+		if(TimeUtils.millis() - m_current > m_timer*1000)
 		{
-			batch.draw(m_Texture, PosX - w/2, PosY - h/2, w, h);
 			m_timer = 0;
 			m_current = 0;
 		}
-		else if(m_timer>0)
+		if(m_timer == 0 || (m_timer !=0 && TimeUtils.millis() - m_current > m_timer*1000/3))
+		{
+			batch.draw(m_Texture, PosX - w/2, PosY - h/2, w, h);
+		}
+
+		if(m_timer>0)
 		{
 			Assets.FadeIn_skeleton.setPosition(PosX, PosY - h + 10);
 			Assets.FadeIn_state.update(Gdx.graphics.getDeltaTime());

@@ -29,6 +29,9 @@ public class EndActor extends Actor {
     private AnimationState animState;
     SkeletonRenderer renderer;
     PolygonSpriteBatch pbatch;
+
+    private int angel;
+
     EndActor()
     {
         //Lvup = Assets.UI_atlas.findRegion("Level-up");
@@ -48,7 +51,7 @@ public class EndActor extends Actor {
         pbatch = new PolygonSpriteBatch();
     }
 
-    public void SetLvup(boolean b, String name)
+    public void SetLvup(boolean b, String name, String skinName)
     {
         if(name == null)
         {
@@ -60,11 +63,12 @@ public class EndActor extends Actor {
         else
             Lvup = Assets.UI_atlas.findRegion("Level-down");
         animState.setAnimation(0,name,true);
-        anim.setSkin(Assets.Boy_skeleton.getSkin().getName());
+        anim.setSkin(skinName);
         anim.updateWorldTransform();
         Vector2 offset = new Vector2(), size = new Vector2();
         anim.getBounds(offset, size);
         anim.setPosition(BoardScreen.scr_w/2, BoardScreen.scr_h/2 - size.y/2);
+        angel = 0;
     }
 
     public boolean Ready()
@@ -88,9 +92,14 @@ public class EndActor extends Actor {
 
         batch.draw(Congrat, BoardScreen.scr_w/2 - Congrat.getRegionWidth()*BoardScreen.scale_ratio/2,
                 BoardScreen.scr_h/2 - Congrat.getRegionHeight()*BoardScreen.scale_ratio/2,
+                Congrat.getRegionWidth()*BoardScreen.scale_ratio/2,
+                Congrat.getRegionHeight()*BoardScreen.scale_ratio/2,
                 Congrat.getRegionWidth()*BoardScreen.scale_ratio,
-                Congrat.getRegionHeight()*BoardScreen.scale_ratio
+                Congrat.getRegionHeight()*BoardScreen.scale_ratio,
+                1, 1,
+                angel
         );
+        angel++;
 
         batch.end();
 

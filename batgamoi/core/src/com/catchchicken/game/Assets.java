@@ -40,8 +40,11 @@ public class Assets {
 	
 	//splash - tutorial
 	public static TextureAtlas Splash_atlas;
-	public static TextureRegion SplashTexture;
 	public static TextureRegion SplashBGTexture;
+	public static Skeleton BoyS_skeleton;
+	public static AnimationState BoyS_state;
+	public static Skeleton GaS_skeleton;
+	public static AnimationState GaS_state;
 	
 	public static TextureAtlas Tutor_atlas;
 	public static TextureRegion TutorTexture;
@@ -56,10 +59,28 @@ public class Assets {
 
 	public static void LoadSplash()
 	{
-		Splash_atlas = new TextureAtlas(Gdx.files.internal("data/splash.atlas"));
-		SplashTexture = Splash_atlas.findRegion("splash");
-		SplashBGTexture = Splash_atlas.findRegion("splashbg");
-		
+		Splash_atlas = new TextureAtlas(Gdx.files.internal("data/Splash/splash.atlas"));
+		SplashBGTexture = Splash_atlas.findRegion("splash");
+
+		TextureAtlas Boy_atlas = new TextureAtlas(Gdx.files.internal("data/Splash/BoyS.atlas"));
+		SkeletonJson bjson = new SkeletonJson(Boy_atlas);
+		bjson.setScale(BoardScreen.scale_ratio*2);
+		SkeletonData bskeletonData = bjson.readSkeletonData(Gdx.files.internal("data/Splash/BoyS.json"));
+		BoyS_skeleton = new Skeleton(bskeletonData);
+		AnimationStateData bstateData = new AnimationStateData(bskeletonData);
+		BoyS_state = new AnimationState(bstateData);
+		BoyS_skeleton.setSkin("Cap6");
+		BoyS_state.setAnimation(0, "Buon", true);
+
+		TextureAtlas Ga_atlas = new TextureAtlas(Gdx.files.internal("data/Splash/Ga.atlas"));
+		SkeletonJson json = new SkeletonJson(Ga_atlas);
+		json.setScale(BoardScreen.scale_ratio*2);
+		SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal("data/Splash/Ga.json"));
+		GaS_skeleton = new Skeleton(skeletonData);
+		AnimationStateData stateData = new AnimationStateData(skeletonData);
+		GaS_state = new AnimationState(stateData);
+		GaS_state.setAnimation(0, "Mo", true);
+
 		Tutor_atlas = new TextureAtlas(Gdx.files.internal("data/Huongdan.atlas"));
 		TutorTexture = Tutor_atlas.findRegion("Huongdan");
 	}
@@ -113,6 +134,7 @@ public class Assets {
 		stateData = new AnimationStateData(skeletonData);
 		FadeIn_state = new AnimationState(stateData);
 		FadeIn_state.setAnimation(0, "animation", true);
+//		FadeIn_state.setTimeScale(2f);
 		
 		Fade_atlas = new TextureAtlas(Gdx.files.internal("data/Boy/skeleton.atlas"));
 		json = new SkeletonJson(Fade_atlas);
@@ -178,8 +200,11 @@ public class Assets {
 
 		//splash - tutorial
 		Splash_atlas.dispose();
-		SplashTexture = null;
 		SplashBGTexture = null;
+		BoyS_skeleton = null;
+		BoyS_state = null;
+		GaS_skeleton = null;
+		GaS_state = null;
 
 		Tutor_atlas.dispose();
 		TutorTexture = null;
